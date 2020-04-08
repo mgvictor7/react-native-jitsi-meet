@@ -32,7 +32,7 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void call(String url, ReadableMap userInfo) {
+    public void call(String url, String suject, ReadableMap userInfo) {
         UiThreadUtil.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -57,6 +57,14 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
                             .setRoom(url)
                             .setAudioOnly(false)
                             .setUserInfo(_userInfo)
+                            .setSubject(suject)
+                            .setWelcomePageEnabled(false)
+                            .setFeatureFlag("calendar.enabled", false)
+                            .setFeatureFlag("call-integration.enabled", false)
+                            .setFeatureFlag("close-captions.enabled", false)
+                            .setFeatureFlag("chat.enabled", false)
+                            .setFeatureFlag("invite.enabled", false)
+                            .setFeatureFlag("welcomepage.enabled", false)
                             .build();
                     mJitsiMeetViewReference.getJitsiMeetView().join(options);
                 }
@@ -65,7 +73,7 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void audioCall(String url, ReadableMap userInfo) {
+    public void audioCall(String url, String suject, ReadableMap userInfo) {
         UiThreadUtil.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -90,6 +98,14 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
                             .setRoom(url)
                             .setAudioOnly(true)
                             .setUserInfo(_userInfo)
+                            .setSubject(suject)
+                            .setWelcomePageEnabled(false)
+                            .setFeatureFlag("calendar.enabled", false)
+                            .setFeatureFlag("call-integration.enabled", false)
+                            .setFeatureFlag("close-captions.enabled", false)
+                            .setFeatureFlag("chat.enabled", false)
+                            .setFeatureFlag("invite.enabled", false)
+                            .setFeatureFlag("welcomepage.enabled", false)
                             .build();
                     mJitsiMeetViewReference.getJitsiMeetView().join(options);
                 }
