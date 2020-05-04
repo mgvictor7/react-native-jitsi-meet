@@ -52,6 +52,7 @@ RCT_EXPORT_METHOD(call:(NSString *)urlString subject:(NSString *)subject userInf
             [builder setFeatureFlag:@"chat.enabled" withBoolean: NO];
             [builder setFeatureFlag:@"invite.enabled" withBoolean: NO];
             [builder setFeatureFlag:@"welcomepage.enabled" withBoolean: NO];
+            [builder setFeatureFlag:@"ios.recording.enabled" withBoolean: YES];
         }];
         [jitsiMeetView join:options];
     });
@@ -86,6 +87,7 @@ RCT_EXPORT_METHOD(audioCall:(NSString *)urlString subject:(NSString *)subject us
             [builder setFeatureFlag:@"chat.enabled" withBoolean: NO];
             [builder setFeatureFlag:@"invite.enabled" withBoolean: NO];
             [builder setFeatureFlag:@"welcomepage.enabled" withBoolean: NO];
+            [builder setFeatureFlag:@"ios.recording.enabled" withBoolean: YES];
         }];
         [jitsiMeetView join:options];
     });
